@@ -1,8 +1,10 @@
 import styles from "../styles/navbar.module.css";
+import icon from "../assets/1608908_github_icon.svg";
+
 const Navbar = () => {
   return (
     <div className={styles.nav}>
-      <link rel="stylesheet" href="../" />
+      <img className={styles.icon} src={icon} alt="" />
       <h2 className={styles.header}>Github</h2>
     </div>
   );

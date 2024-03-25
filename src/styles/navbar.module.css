@@ -4,11 +4,18 @@
   font-weight: bold;
   display: flex;
   flex-direction: row;
+  gap: 10px;
   padding: 30px;
   color: #393e46;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 
+  .icon {
+    height: 40px;
+    width: 40px;
+  }
+
   .header {
+    color: black;
     margin: 0;
   }
 }
