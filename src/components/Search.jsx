@@ -1,7 +1,7 @@
 import styles from "../styles/search.module.css";
 import React, { useState } from "react";
 
-const Search = () => {
+const Search = ({ setResult }) => {
   const [input, setInput] = useState("");
   return (
     <div className={styles.container}>
