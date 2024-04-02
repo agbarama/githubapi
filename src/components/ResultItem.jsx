@@ -3,8 +3,13 @@ import styles from "../styles/resultitem.module.css";
 const ResultItem = ({ res }) => {
   return (
     <div className={styles.item}>
-      {/* <img className={styles.img} src={res.avatar_url} alt="" /> */}
-      <div className={styles.name}>{res.login}</div>
+      <div className={styles.div}>
+        <img className={styles.img} src={res.avatar_url} alt="user" />
+        <div className={styles.name}>{res.login}</div>
+      </div>
+      <a className={styles.profile} href={res.html_url}>
+        view profile
+      </a>
     </div>
   );
 };

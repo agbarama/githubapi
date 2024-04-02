@@ -3,7 +3,7 @@ import ResultItem from "./ResultItem";
 
 const Result = ({ result }) => {
   return (
-    <div>
+    <div className={styles.resultList}>
       {result.map((res) => (
         <ResultItem key={res.id} res={res} />
       ))}
