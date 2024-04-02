@@ -2,9 +2,8 @@ import styles from "../styles/search.module.css";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-const Search = ({ result, setResult }) => {
-  const [input, setInput] = useState("gabriel");
-  const [page, setPage] = useState(1);
+const Search = ({ result, setResult, page, setPage }) => {
+  const [input, setInput] = useState("");
 
   useEffect(() => {
     axios
@@ -27,11 +26,13 @@ const Search = ({ result, setResult }) => {
       <input
         className={styles.input}
         type="text"
+        placeholder="search for users and organization"
         value={input}
         onChange={(e) => setInput(e.currentTarget.value)}
       />
-      <button onClick={() => page > 1 && setPage(page - 1)}>Back</button>
-      <button onClick={() => setPage(page + 1)}>Next</button>
+      <div className={styles.search} onClick={() => setPage(page + 1)}>
+        search
+      </div>
     </div>
   );
 };
