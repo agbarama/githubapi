@@ -1,11 +1,9 @@
+/* Gird mode */
 .item {
-  /* display: grid;
-  grid-template-columns: repeat(2, 1fr); */
   display: flex;
   justify-content: space-between;
   gap: 10px;
   font-size: 15px;
-  /* height: 50px; */
   padding: 5px 10px;
   margin: 10px;
   border-radius: 10px;
@@ -23,11 +21,22 @@
   }
 
   .profile {
-    /* width: 90px; */
     background-color: black;
     color: white;
     padding: 3px 5px;
     border-radius: 4px;
     text-decoration: none;
+  }
+}
+
+/* List mode */
+.listItem {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 240px;
+  margin: 6px;
+
+  .profile {
+    display: none;
   }
 }

@@ -1,0 +1,30 @@
+.modeContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+
+  .modeType {
+    display: flex;
+    gap: 10px;
+  }
+
+  .mode {
+    cursor: pointer;
+  }
+
+  .clear {
+    background-color: red;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+}
+
+.toggle {
+  background-color: black;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+}

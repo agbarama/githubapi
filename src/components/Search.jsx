@@ -8,7 +8,7 @@ const Search = ({ result, setResult, page, setPage }) => {
   useEffect(() => {
     axios
       .get(
-        `https://api.github.com/search/users?q=${input}&page=${page}&per_page=10`
+        `https://api.github.com/search/users?q=${input}&page=${page}&per_page=30`
       )
       .then((res) => {
         console.log(res.data);
