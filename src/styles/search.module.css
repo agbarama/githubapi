@@ -56,3 +56,12 @@
     cursor: pointer;
   }
 }
+
+.radio {
+  .input {
+    cursor: pointer;
+  }
+  .label {
+    margin-right: 10px;
+  }
+}
