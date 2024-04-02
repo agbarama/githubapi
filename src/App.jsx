@@ -3,17 +3,26 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import Result from "./components/Result";
 import Search from "./components/Search";
-import avatar1 from "./assets/1608908_github_icon.svg";
-import avatar2 from "./assets/react.svg";
+import Container from "./components/Container";
+import Buttons from "./components/Buttons";
 
 function App() {
   const [result, setResult] = useState([]);
+  const [page, setPage] = useState(1);
 
   return (
     <>
       <Navbar />
-      <Search result={result} setResult={setResult} />
-      <Result result={result} />
+      <Container>
+        <Search
+          result={result}
+          setResult={setResult}
+          page={page}
+          setPage={setPage}
+        />
+        <Result result={result} />
+        <Buttons page={page} setPage={setPage} />
+      </Container>
     </>
   );
 }
