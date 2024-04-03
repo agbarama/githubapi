@@ -2,7 +2,7 @@
   width: 550px;
 }
 
-.resultListL {
+.resultListG {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }

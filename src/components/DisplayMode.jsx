@@ -15,7 +15,7 @@ const DisplayMode = ({ isGrid, setIsGrid }) => {
     }
   };
   return (
-    <div className={styles.modeContainer}>
+    <div className={`${styles.modeContainer} ${!isGrid ? styles.isList : ""}`}>
       <div className={styles.modeType}>
         <div
           className={`${styles.mode} ${isGrid ? styles.toggle : ""}`}

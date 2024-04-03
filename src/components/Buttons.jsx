@@ -1,8 +1,8 @@
 import styles from "../styles/buttons.module.css";
 
-const Buttons = ({ page, setPage }) => {
+const Buttons = ({ page, setPage, isGrid }) => {
   return (
-    <div className={styles.buttons}>
+    <div className={`${styles.buttons} ${!isGrid ? styles.isList : ""}`}>
       <button
         className={`${styles.btn} ${styles.white}`}
         onClick={() => page > 1 && setPage(page - 1)}

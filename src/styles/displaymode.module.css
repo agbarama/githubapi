@@ -2,15 +2,19 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 40px;
+  width: 810px;
+
+  margin: 10px 0;
 
   .modeType {
     display: flex;
+    align-items: center;
     gap: 10px;
   }
 
   .mode {
     cursor: pointer;
+    margin-right: 10px;
   }
 
   .clear {
@@ -22,9 +26,14 @@
   }
 }
 
+/* js */
 .toggle {
   background-color: black;
   color: white;
   padding: 5px;
-  border-radius: 5px;
+  border-radius: 15px;
+}
+
+.isList {
+  width: 525px;
 }

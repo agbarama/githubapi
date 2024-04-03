@@ -24,7 +24,7 @@ function App() {
         />
         <DisplayMode isGrid={isGrid} setIsGrid={setIsGrid} />
         <Result result={result} isGrid={isGrid} />
-        <Buttons page={page} setPage={setPage} />
+        <Buttons page={page} setPage={setPage} isGrid={isGrid} />
       </Container>
     </>
   );

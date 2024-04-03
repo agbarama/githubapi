@@ -1,13 +1,30 @@
+import { useRef } from "react";
 import styles from "../styles/resultitem.module.css";
 
-const ResultItem = ({ res, isGrid }) => {
+const ResultItem = ({ res, isGrid, ...rest }) => {
+  const linkRef = useRef(null);
+
+  const handleClick = (res) => {
+    if (!isGrid && linkRef.current) {
+      linkRef.current.click();
+    }
+  };
+
   return (
-    <div className={`${styles.item} ${isGrid ? styles.item : styles.listItem}`}>
+    <div
+      className={`${styles.item} ${isGrid ? styles.listItem : styles.item}`}
+      onClick={() => handleClick(res)}
+    >
       <div className={styles.div}>
         <img className={styles.img} src={res.avatar_url} alt="user" />
         <div className={styles.name}>{res.login}</div>
       </div>
-      <a className={styles.profile} href={res.html_url}>
+      <a
+        className={styles.profile}
+        href={res.html_url}
+        ref={linkRef}
+        target="_blank"
+      >
         view profile
       </a>
     </div>
