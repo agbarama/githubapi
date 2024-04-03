@@ -29,6 +29,7 @@ function App() {
           setIsGrid={setIsGrid}
           setResult={setResult}
           isLoading={isLoading}
+          setIsLoading={setIsLoading}
         />
         <Result result={result} isGrid={isGrid} />
         <Buttons
@@ -36,6 +37,7 @@ function App() {
           setPage={setPage}
           isGrid={isGrid}
           isLoading={isLoading}
+          setIsLoading={setIsLoading}
         />
       </Container>
     </>

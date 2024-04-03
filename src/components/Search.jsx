@@ -5,6 +5,7 @@ import axios from "axios";
 const Search = ({ result, setResult, page, setPage, setIsLoading }) => {
   const [input, setInput] = useState("");
   const [isUser, setIsUser] = useState(true);
+  const [url, setUrl] = useState();
 
   const handleCheck = () => {
     if (isUser) {
@@ -17,9 +18,10 @@ const Search = ({ result, setResult, page, setPage, setIsLoading }) => {
   useEffect(() => {
     axios
       .get(
-        isUser
-          ? `https://api.github.com/search/users?q=${input}&page=${page}&per_page=30`
-          : `https://api.github.com/search/orgs?q=${input}&page=${page}&per_page=30`
+        // isUser
+        //   ? `https://api.github.com/search/users?q=${input}&page=${page}&per_page=30`
+        //   : `https://api.github.com/search/orgs?q=${input}&page=${page}&per_page=30`
+        `https://api.github.com/search/users?q=${input}&page=${page}&per_page=30`
       )
       .then((res) => {
         console.log(res.data);
@@ -43,9 +45,14 @@ const Search = ({ result, setResult, page, setPage, setIsLoading }) => {
           value={input}
           onChange={(e) => setInput(e.currentTarget.value)}
         />
-        <div className={styles.search} onClick={() => setPage(page + 1)}>
+        <button
+          type="submit"
+          className={styles.search}
+          onClick={() => setPage(page + 1)}
+        >
+          {" "}
           search
-        </div>
+        </button>
       </div>
       <div className={styles.radio}>
         <input
@@ -70,10 +77,10 @@ const Search = ({ result, setResult, page, setPage, setIsLoading }) => {
         />
         <label
           className={styles.label}
-          htmlFor="oragnization"
+          htmlFor="organization"
           onClick={handleCheck}
         >
-          Oragnization
+          Organization
         </label>
       </div>
     </div>

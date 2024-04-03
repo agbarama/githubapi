@@ -1,6 +1,12 @@
 import styles from "../styles/displaymode.module.css";
 
-const DisplayMode = ({ isGrid, setIsGrid, setResult, isLoading }) => {
+const DisplayMode = ({
+  isGrid,
+  setIsGrid,
+  setResult,
+  isLoading,
+  setIsLoading,
+}) => {
   const grid = () => {
     if (!isGrid) {
       setIsGrid(true);
@@ -14,6 +20,11 @@ const DisplayMode = ({ isGrid, setIsGrid, setResult, isLoading }) => {
       console.log(isGrid);
     }
   };
+  const handleDelete = () => {
+    setResult([]);
+    setIsLoading(true);
+  };
+
   return (
     <div
       className={`${styles.modeContainer} ${!isGrid ? styles.isList : ""}  ${
@@ -34,7 +45,7 @@ const DisplayMode = ({ isGrid, setIsGrid, setResult, isLoading }) => {
           List
         </div>
       </div>
-      <div className={styles.clear} onClick={() => setResult([])}>
+      <div className={styles.clear} onClick={handleDelete}>
         clear
       </div>
     </div>
