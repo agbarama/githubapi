@@ -4,6 +4,15 @@ import axios from "axios";
 
 const Search = ({ result, setResult, page, setPage }) => {
   const [input, setInput] = useState("");
+  const [isUser, setIsUser] = useState(true);
+
+  const handleCheck = () => {
+    if (isUser) {
+      setIsUser(false);
+    } else {
+      setIsUser(true);
+    }
+  };
 
   useEffect(() => {
     axios
@@ -22,8 +31,8 @@ const Search = ({ result, setResult, page, setPage }) => {
   }, [page]);
 
   return (
-    <div>
-      <div className={styles.container}>
+    <div className={styles.container}>
+      <div className={styles.inputContainer}>
         <input
           className={styles.input}
           type="text"
@@ -36,7 +45,14 @@ const Search = ({ result, setResult, page, setPage }) => {
         </div>
       </div>
       <div className={styles.radio}>
-        <input className={styles.input} type="radio" name="user" id="user" />
+        <input
+          className={styles.input}
+          type="radio"
+          name="user"
+          id="user"
+          checked={isUser}
+          onChange={handleCheck}
+        />
         <label className={styles.label} htmlFor="">
           User
         </label>
@@ -46,6 +62,8 @@ const Search = ({ result, setResult, page, setPage }) => {
           type="radio"
           name="organization"
           id="organization"
+          checked={!isUser}
+          onChange={handleCheck}
         />
         <label className={styles.label} htmlFor="oragnization">
           Oragnization

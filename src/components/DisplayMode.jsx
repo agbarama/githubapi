@@ -1,6 +1,6 @@
 import styles from "../styles/displaymode.module.css";
 
-const DisplayMode = ({ isGrid, setIsGrid }) => {
+const DisplayMode = ({ isGrid, setIsGrid, setResult }) => {
   const grid = () => {
     if (!isGrid) {
       setIsGrid(true);
@@ -30,7 +30,9 @@ const DisplayMode = ({ isGrid, setIsGrid }) => {
           List
         </div>
       </div>
-      <div className={styles.clear}>clear</div>
+      <div className={styles.clear} onClick={() => setResult([])}>
+        clear
+      </div>
     </div>
   );
 };
