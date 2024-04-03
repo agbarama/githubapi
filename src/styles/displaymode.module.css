@@ -37,3 +37,7 @@
 .isList {
   width: 525px;
 }
+
+.hide {
+  display: none;
+}

@@ -4,8 +4,8 @@ import styles from "../styles/resultitem.module.css";
 const ResultItem = ({ res, isGrid, ...rest }) => {
   const linkRef = useRef(null);
 
-  const handleClick = (res) => {
-    if (!isGrid && linkRef.current) {
+  const handleClick = () => {
+    if (isGrid && linkRef.current) {
       linkRef.current.click();
     }
   };
@@ -13,7 +13,7 @@ const ResultItem = ({ res, isGrid, ...rest }) => {
   return (
     <div
       className={`${styles.item} ${isGrid ? styles.listItem : styles.item}`}
-      onClick={() => handleClick(res)}
+      onClick={handleClick}
     >
       <div className={styles.div}>
         <img className={styles.img} src={res.avatar_url} alt="user" />

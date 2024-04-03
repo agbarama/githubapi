@@ -21,6 +21,11 @@
   }
 }
 
+/* js */
 .isList {
   width: 530px;
+}
+
+.hide {
+  display: none;
 }

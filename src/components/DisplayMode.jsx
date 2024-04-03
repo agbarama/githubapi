@@ -1,6 +1,6 @@
 import styles from "../styles/displaymode.module.css";
 
-const DisplayMode = ({ isGrid, setIsGrid, setResult }) => {
+const DisplayMode = ({ isGrid, setIsGrid, setResult, isLoading }) => {
   const grid = () => {
     if (!isGrid) {
       setIsGrid(true);
@@ -15,7 +15,11 @@ const DisplayMode = ({ isGrid, setIsGrid, setResult }) => {
     }
   };
   return (
-    <div className={`${styles.modeContainer} ${!isGrid ? styles.isList : ""}`}>
+    <div
+      className={`${styles.modeContainer} ${!isGrid ? styles.isList : ""}  ${
+        isLoading ? styles.hide : ""
+      }`}
+    >
       <div className={styles.modeType}>
         <div
           className={`${styles.mode} ${isGrid ? styles.toggle : ""}`}

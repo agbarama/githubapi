@@ -11,6 +11,7 @@ function App() {
   const [result, setResult] = useState([]);
   const [page, setPage] = useState(1);
   const [isGrid, setIsGrid] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
 
   return (
     <>
@@ -21,14 +22,21 @@ function App() {
           setResult={setResult}
           page={page}
           setPage={setPage}
+          setIsLoading={setIsLoading}
         />
         <DisplayMode
           isGrid={isGrid}
           setIsGrid={setIsGrid}
           setResult={setResult}
+          isLoading={isLoading}
         />
         <Result result={result} isGrid={isGrid} />
-        <Buttons page={page} setPage={setPage} isGrid={isGrid} />
+        <Buttons
+          page={page}
+          setPage={setPage}
+          isGrid={isGrid}
+          isLoading={isLoading}
+        />
       </Container>
     </>
   );

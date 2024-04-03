@@ -2,7 +2,7 @@ import styles from "../styles/search.module.css";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-const Search = ({ result, setResult, page, setPage }) => {
+const Search = ({ result, setResult, page, setPage, setIsLoading }) => {
   const [input, setInput] = useState("");
   const [isUser, setIsUser] = useState(true);
 
@@ -17,13 +17,16 @@ const Search = ({ result, setResult, page, setPage }) => {
   useEffect(() => {
     axios
       .get(
-        `https://api.github.com/search/users?q=${input}&page=${page}&per_page=30`
+        isUser
+          ? `https://api.github.com/search/users?q=${input}&page=${page}&per_page=30`
+          : `https://api.github.com/search/orgs?q=${input}&page=${page}&per_page=30`
       )
       .then((res) => {
         console.log(res.data);
 
         console.log(res.data.items);
         setResult(res.data.items);
+        setIsLoading(false);
       })
       .catch((err) => {
         console.error("error fetching data:", err);
