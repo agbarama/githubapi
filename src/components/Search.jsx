@@ -56,7 +56,7 @@ const Search = ({ result, setResult, page, setPage, setIsLoading }) => {
           checked={isUser}
           onChange={handleCheck}
         />
-        <label className={styles.label} htmlFor="">
+        <label className={styles.label} htmlFor="" onClick={handleCheck}>
           User
         </label>
 
@@ -68,7 +68,11 @@ const Search = ({ result, setResult, page, setPage, setIsLoading }) => {
           checked={!isUser}
           onChange={handleCheck}
         />
-        <label className={styles.label} htmlFor="oragnization">
+        <label
+          className={styles.label}
+          htmlFor="oragnization"
+          onClick={handleCheck}
+        >
           Oragnization
         </label>
       </div>
