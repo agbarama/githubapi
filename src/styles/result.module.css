@@ -6,3 +6,51 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
+
+/* Iphone SE */
+@media only screen and (min-width: 0px) and (max-width: 413px) {
+  .resultList {
+    width: 350px;
+  }
+
+  .resultListG {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Iphone 12 pro */
+@media only screen and (min-width: 376px) and (max-width: 390px) {
+  .resultList {
+    width: 350px;
+  }
+
+  .resultListG {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Iphone XR */
+@media only screen and (min-width: 391px) and (max-width: 414px) {
+  .resultList {
+    width: 350px;
+  }
+
+  .resultListG {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Iphone 12 pro */
+@media only screen and (min-width: 415px) and (max-width: 430px) {
+  .resultList {
+    width: 350px;
+  }
+
+  .resultListG {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

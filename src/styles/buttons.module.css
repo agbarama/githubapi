@@ -29,3 +29,31 @@
 .hide {
   display: none;
 }
+
+/* Iphone SE */
+@media only screen and (min-width: 0px) and (max-width: 413px) {
+  .buttons {
+    width: 350px;
+  }
+}
+
+/* Iphone 12 pro */
+@media only screen and (min-width: 376px) and (max-width: 390px) {
+  .buttons {
+    width: 350px;
+  }
+}
+
+/* Iphone XR */
+@media only screen and (min-width: 391px) and (max-width: 414px) {
+  .buttons {
+    width: 350px;
+  }
+}
+
+/* Iphone 12 pro */
+@media only screen and (min-width: 415px) and (max-width: 430px) {
+  .buttons {
+    width: 350px;
+  }
+}

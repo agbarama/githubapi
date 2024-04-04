@@ -41,3 +41,31 @@
 .hide {
   display: none;
 }
+
+/* Iphone SE */
+@media only screen and (min-width: 0px) and (max-width: 413px) {
+  .modeContainer {
+    width: 330px;
+  }
+}
+
+/* Iphone 12 pro */
+@media only screen and (min-width: 376px) and (max-width: 390px) {
+  .modeContainer {
+    width: 330px;
+  }
+}
+
+/* Iphone XR */
+@media only screen and (min-width: 391px) and (max-width: 414px) {
+  .modeContainer {
+    width: 330px;
+  }
+}
+
+/* Iphone 12 pro */
+@media only screen and (min-width: 415px) and (max-width: 430px) {
+  .modeContainer {
+    width: 330px;
+  }
+}

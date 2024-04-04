@@ -38,3 +38,64 @@
     }
   }
 }
+
+/* Iphone SE */
+@media only screen and (min-width: 0px) and (max-width: 413px) {
+  .container {
+    width: 350px;
+
+    .inputContainer {
+      .input {
+        padding: 10px;
+        width: 300px;
+        margin-bottom: 1px;
+      }
+    }
+  }
+}
+
+/* Iphone 12 pro */
+@media only screen and (min-width: 376px) and (max-width: 390px) {
+  .container {
+    width: 350px;
+
+    .inputContainer {
+      .input {
+        padding: 10px;
+        width: 300px;
+        margin-bottom: 1px;
+      }
+    }
+  }
+}
+
+/* Iphone XR */
+@media only screen and (min-width: 391px) and (max-width: 414px) {
+  .container {
+    width: 350px;
+
+    .inputContainer {
+      .input {
+        padding: 10px;
+        width: 300px;
+        margin-bottom: 1px;
+      }
+    }
+  }
+}
+
+/* Iphone 12 pro */
+@media only screen and (min-width: 415px) and (max-width: 430px) {
+  .container {
+    width: 390px;
+    margin-left: -10px;
+
+    .inputContainer {
+      .input {
+        padding: 10px;
+        width: 300px;
+        margin-bottom: 1px;
+      }
+    }
+  }
+}

@@ -5,24 +5,27 @@ import axios from "axios";
 const Search = ({ result, setResult, page, setPage, setIsLoading }) => {
   const [input, setInput] = useState("");
   const [isUser, setIsUser] = useState(true);
-  const [url, setUrl] = useState();
+  const [url, setUrl] = useState(
+    `https://api.github.com/search/users?q=${input}&page=${page}&per_page=30+`
+  );
 
   const handleCheck = () => {
     if (isUser) {
       setIsUser(false);
+      setUrl(
+        `https://api.github.com/search/users?q=${input}type:org&page=${page}&per_page=30`
+      );
     } else {
       setIsUser(true);
+      setUrl(
+        `https://api.github.com/search/users?q=${input}&page=${page}&per_page=30+`
+      );
     }
   };
 
   useEffect(() => {
     axios
-      .get(
-        // isUser
-        //   ? `https://api.github.com/search/users?q=${input}&page=${page}&per_page=30`
-        //   : `https://api.github.com/search/orgs?q=${input}&page=${page}&per_page=30`
-        `https://api.github.com/search/users?q=${input}&page=${page}&per_page=30`
-      )
+      .get(url)
       .then((res) => {
         console.log(res.data);
 
