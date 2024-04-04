@@ -25,7 +25,9 @@ const Search = ({ result, setResult, page, setPage, setIsLoading }) => {
 
   useEffect(() => {
     axios
-      .get(url)
+      .get(
+        `https://api.github.com/search/users?q=${input}&page=${page}&per_page=30+`
+      )
       .then((res) => {
         console.log(res.data);
 
