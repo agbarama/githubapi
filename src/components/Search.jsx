@@ -5,39 +5,45 @@ import axios from "axios";
 const Search = ({ result, setResult, page, setPage, setIsLoading }) => {
   const [input, setInput] = useState("");
   const [isUser, setIsUser] = useState(true);
-  const [url, setUrl] = useState(
-    `https://api.github.com/search/users?q=${input}&page=${page}&per_page=30+`
-  );
 
-  const handleCheck = () => {
-    if (isUser) {
-      setIsUser(false);
-      setUrl(
-        `https://api.github.com/search/users?q=${input}type:org&page=${page}&per_page=30`
-      );
-    } else {
+  const handleUserCheck = () => {
+    if (!isUser) {
       setIsUser(true);
-      setUrl(
-        `https://api.github.com/search/users?q=${input}&page=${page}&per_page=30+`
-      );
+      setPage(1);
     }
   };
 
-  useEffect(() => {
-    axios
-      .get(
-        `https://api.github.com/search/users?q=${input}&page=${page}&per_page=30+`
-      )
-      .then((res) => {
-        console.log(res.data);
+  const handleOrgCheck = () => {
+    if (isUser) {
+      setIsUser(false);
+      setPage(1);
+    }
+  };
 
-        console.log(res.data.items);
-        setResult(res.data.items);
-        setIsLoading(false);
-      })
-      .catch((err) => {
-        console.error("error fetching data:", err);
-      });
+  const params = {
+    q: isUser ? input : `${input}+type:org`,
+    page: page,
+    per_page: 30,
+  };
+  console.log(params);
+
+  useEffect(() => {
+    if (input.length > 0) {
+      axios
+        .get(
+          isUser
+            ? `https://api.github.com/search/users?q=${input}&page=${page}&per_page=30`
+            : `https://api.github.com/search/users?q=${input}+type:org&page=${page}&per_page=30
+        `
+        )
+        .then((res) => {
+          setResult(res.data.items);
+          setIsLoading(false);
+        })
+        .catch((err) => {
+          console.error("error fetching data:", err);
+        });
+    }
   }, [page]);
 
   return (
@@ -66,9 +72,9 @@ const Search = ({ result, setResult, page, setPage, setIsLoading }) => {
           name="user"
           id="user"
           checked={isUser}
-          onChange={handleCheck}
+          onChange={handleUserCheck}
         />
-        <label className={styles.label} htmlFor="" onClick={handleCheck}>
+        <label className={styles.label} htmlFor="" onClick={handleUserCheck}>
           User
         </label>
 
@@ -78,12 +84,12 @@ const Search = ({ result, setResult, page, setPage, setIsLoading }) => {
           name="organization"
           id="organization"
           checked={!isUser}
-          onChange={handleCheck}
+          onChange={handleOrgCheck}
         />
         <label
           className={styles.label}
           htmlFor="organization"
-          onClick={handleCheck}
+          onClick={handleOrgCheck}
         >
           Organization
         </label>
