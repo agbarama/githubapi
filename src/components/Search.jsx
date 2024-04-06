@@ -20,14 +20,13 @@ const Search = ({ result, setResult, page, setPage, setIsLoading }) => {
     }
   };
 
-  const params = {
-    q: isUser ? input : `${input}+type:org`,
-    page: page,
-    per_page: 30,
-  };
-  console.log(params);
-
   useEffect(() => {
+    const params = {
+      q: isUser ? input : `${input}+type:org`,
+      page: page,
+      per_page: 30,
+    };
+
     if (input.length > 0) {
       axios
         .get(
