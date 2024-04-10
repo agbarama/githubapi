@@ -1,6 +1,7 @@
 import styles from "../styles/buttons.module.css";
+import axios from "axios";
 
-const Buttons = ({ page, setPage, isGrid, isLoading }) => {
+const Buttons = ({ isUser = { isUser }, page, setPage, isGrid, isLoading }) => {
   return (
     <div
       className={`${styles.buttons} ${!isGrid ? styles.isList : ""} ${
